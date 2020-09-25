@@ -4,18 +4,24 @@ body {
 
 .App {
   text-align: center;
-  max-width: 728px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
+.logoImg{
+  width: 80% !important;
+  margin: auto;
+  height: calc(100vh - 200px);
+  border-radius: 0px !important;
+}
+
 .App header {
-  background-color: #181717;
-  height: 10vh;
-  min-height: 50px;
+  background-color: #24242C;
+  font-size: 20px;
   color: white;
   position: fixed;
   width: 100%;
-  max-width: 728px;
+  max-width: 1200px;
   top: 0;
   display: flex;
   align-items: center;
@@ -25,17 +31,22 @@ body {
   box-sizing: border-box;
 }
 
+header p{
+  margin: 0;
+}
+
 .App section {
   display: flex;
   flex-direction: column;
+  width: 100%;
   justify-content: center;
   min-height: 100vh;
-  background-color: rgb(40, 37, 53);
+  background-color: #24242C;
 }
 
 main {
   padding: 10px;
-  height: 80vh;
+  height: calc(100vh - 180px);
   margin: 10vh 0 10vh;
   overflow-y: scroll;
   display: flex;
@@ -51,46 +62,74 @@ main::-webkit-scrollbar-track {
 }
 
 main::-webkit-scrollbar-thumb {
-  background: #6649b8;
+  background: dodgerblue;
 }
 
 form {
-  height: 10vh;
   position: fixed;
   bottom: 0;
-  background-color: rgb(24, 23, 23);
-  width: 100%;
-  max-width: 728px;
+  min-width: calc(100% - 359px);
+  width: calc(100vw - 359px);
+  max-width: 1180px;
   display: flex;
-  font-size: 1.5rem;
+  justify-content: space-between;
+  font-size: 1rem;
+  padding: 10px;
+  margin: auto;
 }
 
 form button {
   width: 20%;
-  background-color: rgb(56, 56, 143);
+  background-color: darkcyan;
 }
 
 input {
   line-height: 1.5;
-  width: 100%;
-  font-size: 1.5rem;
+  width: calc(100vw - 110px);
+  min-width: 200px;
+  font-size: 1rem;
   background: rgb(58, 58, 58);
   color: white;
   outline: none;
   border: none;
-  padding: 0 10px;
+  padding: 0 20px;
+  border-radius: 50px;
 }
 
 button {
-  background-color: #282c34; /* Green */
+  background-color: darkcyan; /* Green */
   border: none;
+  max-width: 230px;
+  min-width: 50px;
+  margin-left: 10px;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  font-size: 1.25rem;
+  font-size: 0.9rem;
+  border-radius: 50px;
+}
+
+button:focus{
+  outline: 0;
+}
+
+.signInBtn{
+  margin: auto;
+}
+
+.sendBtn{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+button:hover{
+  background-color: rgb(0, 167, 167);
 }
 
 button:disabled {
@@ -146,4 +185,11 @@ img {
   height: 40px;
   border-radius: 50%;
   margin: 2px 5px;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  form{
+    width: calc(100% - 20px);
+  }
 }

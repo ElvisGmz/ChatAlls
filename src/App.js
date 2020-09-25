@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import "./App.css";
+import logo from './undraw.svg'
 
 import firebase from "firebase/app";
 import "firebase/firestore";
@@ -27,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>ChatAlls by ElvisGmz 🔥</p>
+        <p>ChatAlls 🍕</p>
         <SignOut />
       </header>
       <section>{user ? <ChatRoom /> : <SignIn />}</section>
@@ -41,7 +42,15 @@ function SignIn() {
     auth.signInWithPopup(provider);
   };
 
-  return <button onClick={signInWithGoogle}>Sign in with Google</button>;
+  return (
+    <>
+      <img className='logoImg' src={logo}></img>
+      <center>
+      <p>Inicia sesion con tu cuenta de Google para poder charlar en grupo.</p>
+      </center>
+      <button className='signInBtn' onClick={signInWithGoogle}>Sign in with Google</button>;
+    </>
+  )
 }
 
 function SignOut() {
@@ -90,7 +99,7 @@ function ChatRoom() {
           value={formValue}
           onChange={(e) => setFormValue(e.target.value)}
         />
-        <button type="submit">✈</button>
+        <button className='sendBtn' type="submit">✈</button>
       </form>
     </>
   );
