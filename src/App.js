@@ -45,9 +45,6 @@ function SignIn() {
   return (
     <>
       <img className='logoImg' src={logo}></img>
-      <center>
-      <p>Inicia sesion con tu cuenta de Google para poder charlar en grupo.</p>
-      </center>
       <button className='signInBtn' onClick={signInWithGoogle}>Sign in with Google</button>;
     </>
   )
@@ -73,13 +70,15 @@ function ChatRoom() {
 
     const { uid, photoURL } = auth.currentUser;
 
-    await messagesRef.add({
-      text: formValue,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      uid,
-      photoURL,
-    });
-    setFormValue('');
+    if (formValue !== ''){
+      await messagesRef.add({
+        text: formValue,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        uid,
+        photoURL,
+      });
+      setFormValue('');
+    }
     
   };
 

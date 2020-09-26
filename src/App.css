@@ -10,8 +10,9 @@ body {
 
 .logoImg{
   width: 80% !important;
+  max-width: 600px;
   margin: auto;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 69px);
   border-radius: 0px !important;
 }
 
@@ -40,14 +41,15 @@ header p{
   flex-direction: column;
   width: 100%;
   justify-content: center;
-  min-height: 100vh;
+  height: inherit;
   background-color: #24242C;
 }
 
 main {
   padding: 10px;
-  height: calc(100vh - 158px);
-  margin: 0 0 10px 0;
+  min-height: calc(100vh - 150px);
+  max-height: calc(100vh - 150px);
+  margin: 60px 0 0px 0;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -69,9 +71,10 @@ main::-webkit-scrollbar-thumb {
 form {
   position: fixed;
   bottom: 0;
-  min-width: calc(100% - 359px);
-  width: calc(100vw - 359px);
-  max-width: 1180px;
+  width: inherit;
+  /* width: calc(100% - 359px); */
+  background-color: #24242C;
+  max-width: 1180px !important;
   display: flex;
   justify-content: space-between;
   font-size: 1rem;
@@ -194,6 +197,7 @@ p {
 .message p{
   max-width: 70%;
   font-size: 14px;
+  text-align: left;
 }
 
 .sent {
@@ -202,11 +206,11 @@ p {
 
 .sent p {
   color: white;
-  background: crimson;
+  background: dodgerblue;
   align-self: flex-end;
 }
 .received p {
-  background: dodgerblue;
+  background: crimson;
   color: #FFF;
 }
 
@@ -215,11 +219,4 @@ img {
   height: 40px;
   border-radius: 50%;
   margin: 2px 5px;
-}
-
-
-@media only screen and (max-width: 1200px) {
-  form{
-    width: calc(100% - 20px);
-  }
 }
