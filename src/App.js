@@ -61,14 +61,13 @@ function SignOut() {
 
 function ChatRoom() {
   const dummy = useRef();
+  const messagesRef = firestore.collection('messages');
+  const query = messagesRef.orderBy('createdAt')
 
-  const messagesRef = firestore.collection("messages");
-  const query = messagesRef.orderBy("createdAt").limit(25);
+  const [messages] = useCollectionData(query, { idField: 'id' });
 
-  const [messages] = useCollectionData(query, { idField: "id" });
-
-  const [formValue, setFormValue] = useState("");
-
+  const [formValue, setFormValue] = useState('');
+  
   const sendMessage = async (e) => {
     e.preventDefault();
 
