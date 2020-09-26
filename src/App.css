@@ -49,7 +49,7 @@ main {
   padding: 10px;
   min-height: calc(100vh - 150px);
   max-height: calc(100vh - 150px);
-  margin: 60px 0 0px 0;
+  margin: 60px 0 70px 0;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -72,13 +72,12 @@ form {
   position: fixed;
   bottom: 0;
   width: inherit;
-  /* width: calc(100% - 359px); */
   background-color: #24242C;
-  max-width: 1180px !important;
+  max-width: 1200px !important;
   display: flex;
   justify-content: space-between;
   font-size: 1rem;
-  padding: 10px;
+  padding: 10px 0px;
   margin: auto;
 }
 
@@ -88,9 +87,8 @@ form button {
 }
 
 input {
-
-  width: calc(100vw - 110px);
-  min-width: 200px;
+  width: calc(100% - 70px);
+  min-width: 160px;
   font-size: 0.8rem;
   background: rgb(58, 58, 58);
   color: white;
@@ -98,6 +96,11 @@ input {
   border: none;
   padding: 0 20px;
   border-radius: 50px;
+  margin: 0 10px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
 }
 
 button {
@@ -105,7 +108,6 @@ button {
   border: none;
   max-width: 230px;
   min-width: 50px;
-  margin-left: 10px;
   color: white;
   padding: 15px 32px;
   text-align: center;
@@ -146,6 +148,7 @@ button:focus{
   height: 50px;
   padding: 0.5rem 0.5rem 0.3rem 0.3rem;
   text-align: center;
+  margin: 0 10px;
 }
 
 button:hover{
