@@ -46,11 +46,12 @@ header p{
 
 main {
   padding: 10px;
-  height: calc(100vh - 180px);
-  margin: 10vh 0 10vh;
+  height: calc(100vh - 158px);
+  margin: 0 0 10px 0;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
+  background-color: #1e1e24;
 }
 
 main::-webkit-scrollbar {
@@ -84,10 +85,10 @@ form button {
 }
 
 input {
-  line-height: 1.5;
+
   width: calc(100vw - 110px);
   min-width: 200px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   background: rgb(58, 58, 58);
   color: white;
   outline: none;
@@ -120,11 +121,27 @@ button:focus{
   margin: auto;
 }
 
+.SignOutBtn{
+  min-width: 0;
+  border-radius: 100%;
+  padding: 0.2rem;
+  font-size: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.SignOutBtn:hover{
+  background-color: crimson;
+}
+
 .sendBtn{
   border-radius: 50%;
+  font-size: 22px;
   width: 50px;
   height: 50px;
-  padding: 0.5rem;
+  padding: 0.5rem 0.5rem 0.3rem 0.3rem;
   text-align: center;
 }
 
@@ -164,6 +181,19 @@ p {
 .message {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  word-break: break-all;
+  word-break: break-word;
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
+}
+
+.message p{
+  max-width: 70%;
+  font-size: 14px;
 }
 
 .sent {
@@ -172,12 +202,12 @@ p {
 
 .sent p {
   color: white;
-  background: #0b93f6;
+  background: crimson;
   align-self: flex-end;
 }
 .received p {
-  background: #e5e5ea;
-  color: black;
+  background: dodgerblue;
+  color: #FFF;
 }
 
 img {

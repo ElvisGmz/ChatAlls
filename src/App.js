@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./App.css";
 import logo from './undraw.svg'
 
@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>ChatAlls 🍕</p>
+        <p>ChatAlls | ElvisGmz_</p>
         <SignOut />
       </header>
       <section>{user ? <ChatRoom /> : <SignIn />}</section>
@@ -55,14 +55,14 @@ function SignIn() {
 
 function SignOut() {
   return (
-    auth.currentUser && <button onClick={() => auth.signOut()}>Sign Out</button>
+    auth.currentUser && <button className='SignOutBtn' onClick={() => auth.signOut()}><i class="fa fa-power-off"></i></button>
   );
 }
 
 function ChatRoom() {
   const dummy = useRef();
   const messagesRef = firestore.collection('messages');
-  const query = messagesRef.orderBy('createdAt')
+  const query = messagesRef.orderBy('createdAt').limitToLast(50)
 
   const [messages] = useCollectionData(query, { idField: 'id' });
 
@@ -79,9 +79,13 @@ function ChatRoom() {
       uid,
       photoURL,
     });
-    setFormValue("");
-    dummy.current.scrollIntoView({ behavior: "smooth" });
+    setFormValue('');
+    
   };
+
+  useEffect(()=>{
+    dummy.current.scrollIntoView({ block: 'end', behavior: 'smooth' });
+  })
 
   return (
     <>
@@ -98,7 +102,7 @@ function ChatRoom() {
           value={formValue}
           onChange={(e) => setFormValue(e.target.value)}
         />
-        <button className='sendBtn' type="submit">✈</button>
+        <button className='sendBtn' type="submit"><i className='fas fa-paper-plane'></i></button>
       </form>
     </>
   );
@@ -115,6 +119,7 @@ function ChatMessage(props) {
       <p>{text}</p>
     </div>
   );
+  
 }
 
 export default App;
