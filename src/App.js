@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>ChatAlls | ElvisGmz_</p>
+        <p>C h a t A l l s</p>
         <SignOut />
       </header>
       <section>{user ? <ChatRoom /> : <SignIn />}</section>
@@ -44,7 +44,7 @@ function SignIn() {
 
   return (
     <>
-      <img className='logoImg' src={logo}></img>
+      <img alt="Logo de bienvenida" className='logoImg' src={logo}></img>
       <button className='signInBtn' onClick={signInWithGoogle}>Sign in with Google</button>;
     </>
   )
@@ -52,7 +52,7 @@ function SignIn() {
 
 function SignOut() {
   return (
-    auth.currentUser && <button className='SignOutBtn' onClick={() => auth.signOut()}><i class="fa fa-power-off"></i></button>
+    auth.currentUser && <button className='SignOutBtn' onClick={() => auth.signOut()}><i className="fa fa-power-off"></i></button>
   );
 }
 
@@ -97,7 +97,7 @@ function ChatRoom() {
 
       <form onSubmit={sendMessage}>
         <input
-          placeholder="Say Hello!"
+          placeholder="Di Hola a todo el mundo!"
           value={formValue}
           onChange={(e) => setFormValue(e.target.value)}
         />
@@ -114,7 +114,7 @@ function ChatMessage(props) {
 
   return (
     <div className={`message ${messageClass}`}>
-      <img src={photoURL} />
+      <img alt="Imagen de perfil del usuario" src={photoURL} />
       <p>{text}</p>
     </div>
   );
